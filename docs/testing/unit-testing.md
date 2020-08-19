@@ -240,7 +240,7 @@ return the initial state of the `NavBar`, which is
 
 ```javascript
 {
-  open: false,
+  false,
 }
 ```
 

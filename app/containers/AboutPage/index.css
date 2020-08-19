@@ -1,0 +1,23 @@
+
+.info_me {
+  padding-top: 50px;
+}
+
+.media_info {
+  padding-top: 30px;
+}
+
+.media_info li a {
+  padding: 20px;
+  padding-top: 25px;
+  margin-right: 20px;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #a9c1ec, #b689d9);
+  border-radius: 5px !important;
+  text-align: center;
+}
+
+.media_info li a:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+}

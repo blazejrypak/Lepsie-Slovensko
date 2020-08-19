@@ -63,7 +63,7 @@ You need to exclude packages which are not intended to be processed by babel. Fo
 ```js
 // in internals/config.js
 
-exclude: [
+[
   'chalk',
   'compression',
   'cross-env',

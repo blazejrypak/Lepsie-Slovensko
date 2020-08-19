@@ -1,29 +1,17 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-
-import A from 'components/A';
-import LocaleToggle from 'containers/LocaleToggle';
-import Wrapper from './Wrapper';
-import messages from './messages';
+import moment from 'moment';
 
 function Footer() {
   return (
-    <Wrapper>
-      <section>
-        <FormattedMessage {...messages.licenseMessage} />
-      </section>
-      <section>
-        <LocaleToggle />
-      </section>
-      <section>
-        <FormattedMessage
-          {...messages.authorMessage}
-          values={{
-            author: <A href="https://twitter.com/mxstbr">Max Stoiber</A>,
-          }}
-        />
-      </section>
-    </Wrapper>
+    <footer className="footer mt-auto py-3 bg-dark text-white">
+      {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
+      <div className="container">
+        Made with ❤️ by Blažej Rypák
+        <br/>
+        <small>&copy; Copyright {moment() &&
+        moment().format('YYYY')}, Blažej Rypák</small>
+      </div>
+    </footer>
   );
 }
 

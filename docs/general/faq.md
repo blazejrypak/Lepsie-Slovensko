@@ -109,8 +109,8 @@ output.publicPath in webpack.dev.babel.js, with protocol.
 ```javascript
 // webpack.dev.babel.js
 
-output: {
-  publicPath: 'http://127.0.0.1:3000/',
+{
+  'http://127.0.0.1:3000/',
   /* … */
 },
 ```
@@ -170,8 +170,8 @@ every version you use will be amazing! There is a long term goal to make this mu
 Webpack recommends having those performance hints turned off in development but to keep them on in production. If you still want to disable them, add the next lines to the config in `webpack.prod.babel.js`:
 
 ```js
-performance: {
-  hints: false;
+{
+  false;
 }
 ```
 
