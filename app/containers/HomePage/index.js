@@ -51,10 +51,10 @@ export function HomePage({
   return (
     <main role="main" className="flex-shrink-0">
       <Helmet>
-        <title>Home Page</title>
+        <title>Domov</title>
         <meta
           name="description"
-          content="A React.js Boilerplate application homepage"
+          content="Vygeneruj si výdavkovy pokladníčný doklad, tlačivo"
         />
       </Helmet>
       <Header />

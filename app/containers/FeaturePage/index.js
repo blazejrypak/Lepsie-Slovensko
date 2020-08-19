@@ -14,10 +14,10 @@ export default function FeaturePage() {
       className="container-fluid"
     >
       <Helmet>
-        <title>FApp</title>
+        <title>App</title>
         <meta
           name="description"
-          content="Feature page of React.js Boilerplate application"
+          content="Lepšie Slovensko, výdavkový pokladničný doklad, pokladničný doklad"
         />
       </Helmet>
       <Scanner />

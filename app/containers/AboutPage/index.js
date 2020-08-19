@@ -3,7 +3,11 @@ import { Helmet } from 'react-helmet';
 import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 import './index.css';
 import Avatar from './avatar.jpg';
 
@@ -19,10 +23,10 @@ function AboutPage() {
     >
       <Helmet>
         <title>About</title>
-        <meta name="description" content="About me"/>
+        <meta name="description" content="Blažej Rypák, react developer | FIIT STU, rypak.b@gmail.com" />
       </Helmet>
       <Container fluid style={{ height: '400px' }}>
-        <br/>
+        <br />
         <Card
           style={{
             boxShadow:
@@ -36,47 +40,41 @@ function AboutPage() {
           <Card.Body>
             <Row>
               <Col md={5}>
-                <Image src={Avatar} alt="avatar" roundedCircle responsive/>
+                <Image src={Avatar} alt="avatar" roundedCircle responsive />
               </Col>
               <Col md={7}>
                 <div className="info_me">
                   <h6>Hello everybody, I am</h6>
-                  <h3>Blazej Rypak</h3>
-                  <h4>WEB</h4>
-                  <br/>
-                  <p>
-                    You will begin to realise why this exercise is called the
-                    Dickens Pattern (with reference to the ghost showing Scrooge
-                    some different futures)
+                  <h3>Blažej Rypák</h3>
+                  <h4>react developer | FIIT STU</h4>
+                  <br />
+                  <p style={{ fontSize: 15 }}>
+                    I code and design beautifully simple things <br /> ~ I just love what I do ~
                   </p>
                   <ul className="list basic_info">
                     <li>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faPhoneAlt} size="2x"/> + 421
-                        948 077 815
-                      </a>
+                      <FontAwesomeIcon icon={faPhoneAlt} />{' '}
+                      <a href="tel:+421948077815">+ 421 948 077 815</a>
                     </li>
                     <li>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faEnvelope} size="2x"/>{' '}
-                        rypak.b@gmail.com
-                      </a>
+                      <FontAwesomeIcon icon={faEnvelope} />
+                      <a href="mailto:rypak.b@gmail.com">rypak.b@gmail.com</a>
                     </li>
                   </ul>
                   <ul className="media_info list-group list-group-horizontal">
                     <li>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faFacebook} size="2x"/>
+                      <a href="https://www.facebook.com/profile.php?id=100000989326252" target="_blank">
+                        <FontAwesomeIcon icon={faFacebook} size="2x" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                      <a href="https://www.instagram.com/bubo.r/" target="_blank">
+                        <FontAwesomeIcon icon={faInstagram} size="2x" />
                       </a>
                     </li>
                     <li>
-                      <a href="#">
-                        <FontAwesomeIcon icon={faLinkedin} size="2x"/>
+                      <a href="https://www.linkedin.com/in/blazejrypak/" target="_blank">
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" />
                       </a>
                     </li>
                   </ul>
@@ -85,9 +83,9 @@ function AboutPage() {
             </Row>
           </Card.Body>
         </Card>
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
       </Container>
     </div>
   );

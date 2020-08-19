@@ -21,19 +21,19 @@ export default function App() {
   return (
     <div>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="Lepšie Slovensko"
+        defaultTitle="Lepšie Slovensko"
       >
-        <meta name="description" content="A React.js Boilerplate application"/>
+        <meta name="description" content="Lepšie Slovensko, pokladničný doklad, výdavkový pokladničný doklad" />
       </Helmet>
-      <Navigation/>
+      <Navigation />
       <Switch>
-        <Route exact path="/" component={HomePage}/>
-        <Route path="/app" component={FeaturePage}/>
-        <Route path="/about" component={AboutPage}/>
-        <Route path="" component={NotFoundPage}/>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/app" component={FeaturePage} />
+        <Route path="/contact" component={AboutPage} />
+        <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

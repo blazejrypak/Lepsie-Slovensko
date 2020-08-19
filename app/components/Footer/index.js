@@ -9,7 +9,7 @@ function Footer() {
         Made with ❤️ by Blažej Rypák
         <br/>
         <small>&copy; Copyright {moment() &&
-        moment().format('YYYY')}, Blažej Rypák</small>
+        moment().format('YYYY')} | All rights reserved</small>
       </div>
     </footer>
   );

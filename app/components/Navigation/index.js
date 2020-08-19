@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Navigation(props) {
+function Navigation() {
   return (
     <nav className="navbar sticky-top navbar-expand-md navbar-light bg-light">
       <a
@@ -24,7 +24,7 @@ function Navigation(props) {
         <ul className="nav navbar-nav navbar-primary w-100 ml-auto">
           <li className="nav-item">
             <a className="nav-link" href="/">
-              <span>Home</span>
+              <span>Domov</span>
             </a>
           </li>
           <li className="nav-item">
@@ -33,13 +33,8 @@ function Navigation(props) {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/about">
-              <span>About</span>
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="mailto: hola@getmove.net">
-              <span>Contact</span>
+            <a className="nav-link" href="/contact">
+              <span>Kontakt</span>
             </a>
           </li>
         </ul>

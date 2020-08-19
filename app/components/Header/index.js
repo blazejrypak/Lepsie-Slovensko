@@ -8,11 +8,24 @@ function Header() {
           <div className="container">
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
-                <h3 style={{ color: 'white', fontSize: 32 }}>
-                  Naskenuj pokladničné bločky a nechaj si vygenerovať tlačivo
+                <h3
+                  style={{ color: 'white', fontWeight: 'normal', fontSize: 30 }}
+                >
+                  Naskenuj QR kódy bločkov a nechaj si vygenerovať <br />
+                  <span
+                    style={{
+                      color: '#ff9400',
+                      fontWeight: 'bolder',
+                      fontSize: 30,
+                    }}
+                  >
+                    výdavkový pokladničný doklad
+                  </span>
                 </h3>
-                <br/>
-                <a className="example_f" href="/features"><span>Začni skenovať</span></a>
+                <br />
+                <a className="example_f" href="/app">
+                  <span>Začni skenovať</span>
+                </a>
               </div>
             </div>
           </div>
