@@ -46,6 +46,17 @@ const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
+import ReactGA from 'react-ga';
+
+const trackingId = "UA-167246561-1"; // Google Analytics tracking ID
+ReactGA.initialize(trackingId);
+
+// Initialize google analytics page view tracking
+history.listen(location => {
+  ReactGA.set({ page: location.pathname }); // Update the user's current page
+  ReactGA.pageview(location.pathname); // Record a pageview for the given page
+});
+
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
