@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Col, Container, Row, Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import moment from 'moment';
-import Input from '../../containers/HomePage/Input';
-import './index.css'
+import './index.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class ExpeditureCashReceiptForm extends React.Component {
@@ -80,48 +79,36 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                     placeholder="................................................................................................."
                   />
                 </p>
-                <Table id="rozdelenie_dph" bordered style={{ border: '2px solid' }}>
-                  <tr style={{ border: '2px solid' }}>
-                    <td style={{ border: '2px solid' }}>Suma v EUR bez DPH</td>
-                    <td style={{ border: '2px solid' }}>DPH 20%</td>
+                <Table id="rozdelenie_dph" bordered>
+                  <tr>
+                    <td>Suma v EUR bez DPH</td>
+                    <td>DPH 20%</td>
                     <td>DPH 10%</td>
-                    <td style={{ border: '2px solid' }}>Oslobodené</td>
+                    <td>Oslobodené</td>
                     <td>CELKOM K ÚHRADE EUR</td>
                   </tr>
-                  <tr style={{ border: '2px solid' }}>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      {taxBaseBasicTotal}
-                    </td>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      {vatAmountBasicTotal}
-                    </td>
-                    <td>X</td>
-                    <td style={{ border: '2px solid' }} >X</td>
+                  <tr>
+                    <td className="text-center">{taxBaseBasicTotal}</td>
+                    <td className="text-center">{vatAmountBasicTotal}</td>
+                    <td className="crossed" />
+                    <td className="crossed" />
                     <td>{taxBaseBasicTotal + vatAmountBasicTotal}</td>
                   </tr>
-                  <tr style={{ border: '2px solid' }}>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      {taxBaseReducedTotal}
-                    </td>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      X
-                    </td>
+                  <tr>
+                    <td className="text-center">{taxBaseReducedTotal}</td>
+                    <td className="crossed" />
                     <td>{vatAmountReducedTotal}</td>
-                    <td style={{ border: '2px solid' }}>X</td>
+                    <td className="crossed" />
                     <td>{taxBaseReducedTotal + vatAmountReducedTotal}</td>
                   </tr>
-                  <tr style={{ border: '2px solid' }}>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      {freeTaxAmountTotal}
-                    </td>
-                    <td style={{ border: '2px solid' }} className="text-center">
-                      X
-                    </td>
-                    <td>X</td>
-                    <td style={{ border: '2px solid' }} >0.00</td>
+                  <tr>
+                    <td className="text-center">{freeTaxAmountTotal}</td>
+                    <td className="crossed" />
+                    <td className="crossed" />
+                    <td>0.00</td>
                     <td>{freeTaxAmountTotal}</td>
                   </tr>
-                  <tr style={{ border: '2px solid' }}>
+                  <tr>
                     <td colSpan="4">
                       Spolu slovom:
                       <input
@@ -147,9 +134,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                     style={{ border: '0px', width: 300 }}
                     type="text"
                     value={this.state.ucelText}
-                    onChange={e =>
-                      this.setState({ ucelText: e.target.value })
-                    }
+                    onChange={e => this.setState({ ucelText: e.target.value })}
                     placeholder="..........................................................................................................................................................."
                   />
                 </p>
