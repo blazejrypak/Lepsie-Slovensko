@@ -1,0 +1,60 @@
+
+.info_me {
+  padding-top: 50px;
+}
+
+.info_me h6 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.info_me h3 {
+  padding-top: 5px;
+  font-size: 40px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.info_me h4 {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.media_info {
+  padding-top: 30px;
+}
+
+.media_info li a {
+  padding: 20px;
+  padding-top: 25px;
+  margin-right: 20px;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, #a9c1ec, #b689d9);
+  border-radius: 5px !important;
+  text-align: center;
+}
+
+.media_info li a:hover {
+  background-position: 100% 0;
+  transition: all .4s ease-in-out;
+}
+
+.basic_info li {
+  padding-bottom: 10px;
+}
+
+.basic_info a {
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
+
+.basic_info a:hover {
+  color: rgba(83, 83, 83, 0.93)
+}
