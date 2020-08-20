@@ -16,7 +16,7 @@ import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import './index.css';
 import AboutPage from '../AboutPage';
-// import TutorialPage from '../TutorialPage';
+import TutorialPage from '../TutorialPage';
 import withTracker from '../../utils/trackerGA';
 
 export default function App() {

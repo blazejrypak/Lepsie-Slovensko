@@ -36,7 +36,7 @@ function TutorialPage() {
           <Card.Body>
             <Row>
               <Col md={5}>
-                {/*<Image src={Avatar} alt="avatar" roundedCircle responsive />*/}
+                <Image src={Avatar} alt="avatar" roundedCircle responsive />
               </Col>
               <Col md={7} >
                 {/*<p>1. Rozdel si blocky na 2 skupiny podla sposobu platby(kartou alebo hotovostou)</p>*/}
