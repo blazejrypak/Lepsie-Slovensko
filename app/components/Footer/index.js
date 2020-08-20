@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import { todayYear } from '../../utils/helpers';
 
 function Footer() {
   return (
@@ -7,9 +7,8 @@ function Footer() {
       {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
       <div className="container">
         Made with ❤️ by Blažej Rypák
-        <br/>
-        <small>&copy; Copyright {moment() &&
-        moment().format('YYYY')} | All rights reserved</small>
+        <br />
+        <small>&copy; Copyright {todayYear()} | All rights reserved</small>
       </div>
     </footer>
   );

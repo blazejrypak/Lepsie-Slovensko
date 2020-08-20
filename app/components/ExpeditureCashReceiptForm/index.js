@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Table } from 'react-bootstrap';
-import moment from 'moment';
 import './index.css';
+import { todayDate } from '../../utils/helpers';
 
 // eslint-disable-next-line react/prefer-stateless-function
 export default class ExpeditureCashReceiptForm extends React.Component {
@@ -54,10 +54,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                 <h3>Výdavkový</h3>
                 <br />
                 <h6>pokladničný doklad číslo ....................</h6>
-                <p>
-                  zo dňa{' '}
-                  {moment().locale('sk') && moment().format('D MMM, YYYY')}
-                </p>
+                <p>zo dňa {todayDate()}</p>
               </td>
             </tr>
             <tr style={{ border: '5px solid' }}>
@@ -183,11 +180,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                       <td />
                     </tr>
                     <tr>
-                      <td>
-                        Dátum{' '}
-                        {moment().locale('sk') &&
-                          moment().format('D MMM, YYYY')}
-                      </td>
+                      <td>Dátum {todayDate()}</td>
                       <td>Podpis</td>
                     </tr>
                   </tbody>
