@@ -9,7 +9,7 @@
 import '@babel/polyfill';
 
 // Import all the third party stuff
-import React from 'react';
+import React  from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -28,9 +28,11 @@ import '!file-loader?name=[name].[ext]!./images/favicon.ico';
 import 'file-loader?name=.htaccess!./.htaccess'; // eslint-disable-line import/extensions
 
 import configureStore from './configureStore';
+import withTracker from './utils/trackerGA';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
+import { Route } from 'react-router-dom';
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
@@ -46,23 +48,16 @@ const initialState = {};
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
 
-import ReactGA from 'react-ga';
-
-const trackingId = "UA-167246561-1"; // Google Analytics tracking ID
-ReactGA.initialize(trackingId);
-
-// Initialize google analytics page view tracking
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
-
 const render = messages => {
   ReactDOM.render(
     <Provider store={store}>
       <LanguageProvider messages={messages}>
         <ConnectedRouter history={history}>
-          <App />
+          <Route
+            component={withTracker(App, {
+              /* additional attributes */
+            })}
+          />
         </ConnectedRouter>
       </LanguageProvider>
     </Provider>,
@@ -85,11 +80,7 @@ if (!window.Intl) {
   new Promise(resolve => {
     resolve(import('intl'));
   })
-    .then(() =>
-      Promise.all([
-        import('intl/locale-data/jsonp/en.js'),
-      ]),
-    ) // eslint-disable-line prettier/prettier
+    .then(() => Promise.all([import('intl/locale-data/jsonp/en.js')])) // eslint-disable-line prettier/prettier
     .then(() => render(translationMessages))
     .catch(err => {
       throw err;

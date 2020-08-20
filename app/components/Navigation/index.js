@@ -33,6 +33,11 @@ function Navigation() {
             </a>
           </li>
           <li className="nav-item">
+            <a className="nav-link" href="/tutorial">
+              <span>Návod</span>
+            </a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="/contact">
               <span>Kontakt</span>
             </a>

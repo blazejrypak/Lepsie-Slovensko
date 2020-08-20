@@ -16,6 +16,7 @@ import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import './index.css';
 import AboutPage from '../AboutPage';
+import TutorialPage from '../TutorialPage';
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/app" component={FeaturePage} />
         <Route path="/contact" component={AboutPage} />
+        <Route path="/tutorial" component={TutorialPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

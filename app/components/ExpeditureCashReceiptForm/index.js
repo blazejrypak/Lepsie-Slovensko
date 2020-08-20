@@ -38,17 +38,52 @@ export default class ExpeditureCashReceiptForm extends React.Component {
             <tr style={{ border: '5px solid' }}>
               <td style={{ border: '5px solid' }}>
                 <h3>Firma</h3>
-                <input
-                  style={{ border: '0px' }}
-                  type="text"
-                  value="EKOPERY, s.r.o."
-                />
-                <br />
-                <p>Ulica Dolinka 926/4</p>
-                <p>029 56 Zákamenné</p>
-                <p>IČO: 36 383 040</p>
-                <p>DIČ: 2020129276</p>
-                <p>IČ-DPH: SK2020129276</p>
+                <form
+                  data-slovensko-digital-autoform-filter="active"
+                  data-slovensko-digital-autoform="6d1d9ca81658ad940472c176faf52fcbb1a43fcaf94393c13dc73ead7cc91df6f706919d39c30e5c"
+                  action="..."
+                >
+                  <p>
+                    <input
+                      type="text"
+                      name="name"
+                      data-slovensko-digital-autoform="name"
+                    />
+                  </p>
+                  <br />
+                  <p>
+                    <input
+                      style={{ border: '0px' }}
+                      type="text"
+                      name="formatted_address"
+                      data-slovensko-digital-autoform="formatted-address"
+                    />
+                  </p>
+                  <p>
+                    <input
+                      style={{ border: '0px' }}
+                      type="text"
+                      name="cin"
+                      data-slovensko-digital-autoform="cin"
+                    />
+                  </p>
+                  <p>
+                    <input
+                      style={{ border: '0px' }}
+                      type="text"
+                      name="tin"
+                      data-slovensko-digital-autoform="tin"
+                    />
+                  </p>
+                  <p>
+                    <input
+                      style={{ border: '0px' }}
+                      type="text"
+                      name="vatin"
+                      data-slovensko-digital-autoform="vatin"
+                    />
+                  </p>
+                </form>
               </td>
               <td>
                 <h3>Výdavkový</h3>
@@ -61,18 +96,16 @@ export default class ExpeditureCashReceiptForm extends React.Component {
               <td colSpan="2">
                 <p>Vyplatené komu </p>
                 <p>
-                  IČO
+                  IČO {'   '}
                   <input
                     style={{ border: '0px', width: 300 }}
                     type="text"
-                    value=""
                     placeholder="................................................................................................."
                   />
-                  DIČ/IČ DPH
+                  DIČ/IČ DPH {'  '}
                   <input
                     style={{ border: '0px', width: 300 }}
                     type="text"
-                    value=""
                     placeholder="................................................................................................."
                   />
                 </p>
