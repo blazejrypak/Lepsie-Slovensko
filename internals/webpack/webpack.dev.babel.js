@@ -26,25 +26,6 @@ module.exports = require('./webpack.base.babel')({
   optimization: {
     splitChunks: {
       chunks: 'all',
-      minSize: 20000,
-      minRemainingSize: 0,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
-      automaticNameDelimiter: '~',
-      enforceSizeThreshold: 50000,
-      cacheGroups: {
-        defaultVendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
-        },
-      },
     },
   },
 
@@ -64,7 +45,6 @@ module.exports = require('./webpack.base.babel')({
   // Emit a source map for easier debugging
   // See https://webpack.js.org/configuration/devtool/#devtool
   devtool: 'eval-source-map',
-  // devtool: false,
 
   performance: {
     hints: false,

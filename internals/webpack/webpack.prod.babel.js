@@ -49,20 +49,9 @@ module.exports = require('./webpack.base.babel')({
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
-      minRemainingSize: 0,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      automaticNameDelimiter: '~',
-      enforceSizeThreshold: 50000,
       maxInitialRequests: 10,
       minSize: 0,
       cacheGroups: {
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true,
-        },
         vendor: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
