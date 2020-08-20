@@ -16,7 +16,7 @@ import Footer from '../../components/Footer';
 import Navigation from '../../components/Navigation';
 import './index.css';
 import AboutPage from '../AboutPage';
-import TutorialPage from '../TutorialPage';
+// import TutorialPage from '../TutorialPage';
 import withTracker from '../../utils/trackerGA';
 
 export default function App() {
@@ -33,7 +33,7 @@ export default function App() {
         <Route exact path="/" component={withTracker(HomePage, {})} />
         <Route path="/app" component={withTracker(FeaturePage, {})} />
         <Route path="/contact" component={withTracker(AboutPage, {})} />
-        <Route path="/tutorial" component={withTracker(TutorialPage, {})} />
+        {/*<Route path="/tutorial" component={withTracker(TutorialPage, {})} />*/}
         <Route path="" component={withTracker(NotFoundPage, {})} />
       </Switch>
       <Footer />
