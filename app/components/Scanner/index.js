@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import ReceiptDetails from '../ReceiptDetails';
 import ExpeditureCashReceiptForm from '../ExpeditureCashReceiptForm';
 import { useReactToPrint } from 'react-to-print';
+import SwitchSelector from 'react-switch-selector';
+import './index.css';
 
 const key = 'Scanner';
 
@@ -20,6 +22,7 @@ export function Scanner(props) {
   };
 
   const [index, setIndex] = useState(0);
+  const [selectorValue, setSelectorValue] = useState('Výdavkový');
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -38,6 +41,26 @@ export function Scanner(props) {
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const options = [
+    {
+      label: 'Výdavkový doklad',
+      value: 'Výdavkový',
+    },
+    {
+      label: 'Interný doklad',
+      value: 'Interný',
+    },
+  ];
+
+  const onChangeMySelector = newValue => {
+    setSelectorValue(newValue);
+  };
+
+  const initialSelectedIndex = options.findIndex(
+    ({ value }) => value === 'vydavkovy_doklad',
+  );
+
   return (
     <Container fluid>
       <Row>
@@ -54,6 +77,7 @@ export function Scanner(props) {
             activeIndex={index}
             onSelect={handleSelect}
             style={{ padding: 50 }}
+            // wrap={false}
           >
             {props.listReceipts.map((r, i) => (
               <Carousel.Item key={r.toString()}>
@@ -68,10 +92,22 @@ export function Scanner(props) {
         </Col>
       </Row>
       <Row>
-        <ExpeditureCashReceiptForm
-          ref={componentRef}
-          listReceipts={props.listReceipts}
-        />
+        <Container>
+          <div className="mySelector" style={{ width: 300, height: 80 }}>
+            <SwitchSelector
+              onChange={onChangeMySelector}
+              options={options}
+              initialSelectedIndex={initialSelectedIndex}
+              optionBorderRadius={50}
+            />
+          </div>
+          <br />
+          <ExpeditureCashReceiptForm
+            ref={componentRef}
+            listReceipts={props.listReceipts}
+            docType={selectorValue}
+          />
+        </Container>
       </Row>
       <div className="text-center" style={{ padding: 20 }}>
         <Button variant="success" onClick={handlePrint}>

@@ -43,7 +43,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                   data-slovensko-digital-autoform="6d1d9ca81658ad940472c176faf52fcbb1a43fcaf94393c13dc73ead7cc91df6f706919d39c30e5c"
                   action="..."
                 >
-                  <p>
+                  <p> Názov: {' '}
                     <input
                       type="text"
                       name="name"
@@ -51,15 +51,15 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                     />
                   </p>
                   <br />
-                  <p>
-                    <input
-                      style={{ border: '0px' }}
+                  <p> Adresa: {' '}
+                    <textarea
+                      style={{ border: '0px', width: '80%' }}
                       type="text"
                       name="formatted_address"
                       data-slovensko-digital-autoform="formatted-address"
                     />
                   </p>
-                  <p>
+                  <p> IČO: {' '}
                     <input
                       style={{ border: '0px' }}
                       type="text"
@@ -67,7 +67,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                       data-slovensko-digital-autoform="cin"
                     />
                   </p>
-                  <p>
+                  <p> DIČ: {' '}
                     <input
                       style={{ border: '0px' }}
                       type="text"
@@ -75,7 +75,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                       data-slovensko-digital-autoform="tin"
                     />
                   </p>
-                  <p>
+                  <p> IČ/DPH: {' '}
                     <input
                       style={{ border: '0px' }}
                       type="text"
@@ -86,7 +86,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                 </form>
               </td>
               <td>
-                <h3>Výdavkový</h3>
+                <h3>{this.props.docType}</h3>
                 <br />
                 <h6>pokladničný doklad číslo ....................</h6>
                 <p>zo dňa {todayDate()}</p>
@@ -118,25 +118,25 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                     <td>CELKOM K ÚHRADE EUR</td>
                   </tr>
                   <tr>
-                    <td className="text-center">{taxBaseBasicTotal}</td>
-                    <td className="text-center">{vatAmountBasicTotal}</td>
+                    <td className="text-center">{taxBaseBasicTotal.toFixed(2)}</td>
+                    <td className="text-center">{vatAmountBasicTotal.toFixed(2)}</td>
                     <td className="crossed" />
                     <td className="crossed" />
-                    <td>{taxBaseBasicTotal + vatAmountBasicTotal}</td>
+                    <td>{(taxBaseBasicTotal + vatAmountBasicTotal).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="text-center">{taxBaseReducedTotal}</td>
+                    <td className="text-center">{taxBaseReducedTotal.toFixed()}</td>
                     <td className="crossed" />
-                    <td>{vatAmountReducedTotal}</td>
+                    <td>{vatAmountReducedTotal.toFixed()}</td>
                     <td className="crossed" />
-                    <td>{taxBaseReducedTotal + vatAmountReducedTotal}</td>
+                    <td>{(taxBaseReducedTotal + vatAmountReducedTotal).toFixed(2)}</td>
                   </tr>
                   <tr>
-                    <td className="text-center">{freeTaxAmountTotal}</td>
+                    <td className="text-center">{freeTaxAmountTotal.toFixed(2)}</td>
                     <td className="crossed" />
                     <td className="crossed" />
                     <td>0.00</td>
-                    <td>{freeTaxAmountTotal}</td>
+                    <td>{freeTaxAmountTotal.toFixed(2)}</td>
                   </tr>
                   <tr>
                     <td colSpan="4">
@@ -190,7 +190,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                     </tr>
                     <tr>
                       <td>Má dať - účet</td>
-                      <td>Suma</td>
+                      <td colSpan={2}>Suma</td>
                     </tr>
                     <tr>
                       <td />
@@ -213,8 +213,7 @@ export default class ExpeditureCashReceiptForm extends React.Component {
                       <td />
                     </tr>
                     <tr>
-                      <td>Dátum {todayDate()}</td>
-                      <td>Podpis</td>
+                      <td colSpan={3}><pre className="tab">Dátum: {todayDate()}           Podpis:</pre></td>
                     </tr>
                   </tbody>
                 </Table>
@@ -229,4 +228,5 @@ export default class ExpeditureCashReceiptForm extends React.Component {
 
 ExpeditureCashReceiptForm.propTypes = {
   listReceipts: PropTypes.array,
+  docType: PropTypes.string,
 };

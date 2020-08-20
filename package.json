@@ -102,6 +102,7 @@
     "react-route": "^1.0.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.0.0",
+    "react-switch-selector": "^1.2.0",
     "react-to-print": "^2.9.0",
     "redux": "4.0.1",
     "redux-logger": "^3.0.6",

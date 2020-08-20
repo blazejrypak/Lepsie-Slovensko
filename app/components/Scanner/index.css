@@ -1,0 +1,13 @@
+.mySelector {
+  padding-top: 20px;
+}
+
+.react-switch-selector-wrapper {
+  border-radius: 50px !important;
+  background-color: #ececec;
+}
+
+.react-switch-selector-option-label {
+  color: black;
+  font-weight: bold;
+}

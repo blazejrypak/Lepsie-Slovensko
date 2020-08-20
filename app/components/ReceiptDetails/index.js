@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row, Table } from 'react-bootstrap';
+import './index.css';
 
 function ReceiptDetails(props) {
   return (
@@ -25,22 +26,24 @@ function ReceiptDetails(props) {
             </Col>
           </Row>
           <Row>
-            <Table hover size="sm">
-              <thead>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-              </thead>
-              <tbody>
-                {props.receipt.items.map(item => (
-                  <tr>
-                    <td>{item.name}</td>
-                    <td>{item.quantity}</td>
-                    <td>{item.price.toFixed(2)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
+            <div className="table-responsive">
+              <Table hover size="sm">
+                <thead>
+                  <th>Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                </thead>
+                <tbody>
+                  {props.receipt.items.map(item => (
+                    <tr>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>{item.price.toFixed(2)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            </div>
           </Row>
           <Row
             style={{
