@@ -1,1 +1,1 @@
-# Check it out on [https://lepsie-slovensko.web.app](https://lepsie-slovensko.web.app)
+### Check it out on [lepsie-slovensko.web.app](https://lepsie-slovensko.web.app)
